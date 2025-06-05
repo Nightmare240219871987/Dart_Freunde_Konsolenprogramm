@@ -145,10 +145,10 @@ void printDetails() {
 }
 
 void printSortedDistanceMap(Map<String, double> map) {
-  //map.entries.toList().sort((a,b) => a.value.compareTo(b.value));
-  
-  for(int i = 0; i < map.length; i++){
-    print("${map.keys.elementAt(i)} => ${map.values.elementAt(i).toStringAsFixed(2)}h");
+  var rootSorted = map.entries.toList();
+  rootSorted.sort((a, b) => a.value.compareTo(b.value));
+  for(var entry in rootSorted){
+    print("${entry.key} => ${entry.value.toStringAsFixed(2)}h");
   }
 }
  

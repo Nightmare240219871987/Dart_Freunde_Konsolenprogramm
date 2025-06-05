@@ -32,3 +32,4 @@ void main() {
   print("Gesamtdistanz: $gesamtKm km");
   print("Gesamtfahrzeit: ${gesamtZeit.toStringAsFixed(2)} Stunden");
 }
+
