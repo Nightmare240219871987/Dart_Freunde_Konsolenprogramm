@@ -16,6 +16,8 @@ List<Vehicle> vehicles = [
   new Vehicle("Zu Fuß", 5),
 ];
 
+Map<String, double> distancesMap = {};
+
 Vehicle vehicle = vehicles[1];
 
 void main() {
@@ -120,10 +122,9 @@ void printTravelTimes() {
   print("Reisezeiten :");
   print("-------------");
   for (int i = 0; i < friends.length; i++) {
-    print(
-      "${friends[i].getName()}:${friends[i].getDistance()} KM, Zeit: ${(friends[i].getDistance()! / vehicle.getSpeed()!).toStringAsFixed(2)}h",
-    );
+    distancesMap[friends[i].getName()!] = (friends[i].getDistance()! / vehicle.getSpeed()!);
   }
+  printSortedDistanceMap(distancesMap);
   print("Drücke ein Beliebige Tasten.");
   stdin.readLineSync();
   printMainMenu();
@@ -141,3 +142,11 @@ void printDetails() {
   print("${vehicle.getVehicleName()}");
   print("");
 }
+
+void printSortedDistanceMap(Map<String, double> map) {
+  //map.entries.toList()..sort((a, b) => a.value.compareTo(b.value));
+  for(int i = 0; i < map.length; i++){
+    print("${map.keys.elementAt(i)} => ${map.values.elementAt(i).toStringAsFixed(2)}h");
+  }
+}
+ 
