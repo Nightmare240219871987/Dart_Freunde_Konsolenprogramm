@@ -1,5 +1,3 @@
-import "dart:io";
-
 //Enum für die Reiseroute
 enum Transportmittel { auto, zug, fahrrad, bus }
 

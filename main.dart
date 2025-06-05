@@ -123,7 +123,8 @@ void printTravelTimes() {
   print("Reisezeiten :");
   print("-------------");
   for (int i = 0; i < friends.length; i++) {
-    distancesMap[friends[i].getName()!] = (friends[i].getDistance()! / vehicle.getSpeed()!);
+    distancesMap[friends[i].getName()!] =
+        (friends[i].getDistance()! / vehicle.getSpeed()!);
   }
   printSortedDistanceMap(distancesMap);
   print("Drücke ein Beliebige Tasten.");
@@ -138,7 +139,6 @@ void printDetails() {
     print("${friends[i].getName()} -> ${friends[i].getDistance()} KM");
   }
   print("");
-
   print("Fahrzeug:");
   print("${vehicle.getVehicleName()}");
   print("");
@@ -147,8 +147,7 @@ void printDetails() {
 void printSortedDistanceMap(Map<String, double> map) {
   var rootSorted = map.entries.toList();
   rootSorted.sort((a, b) => a.value.compareTo(b.value));
-  for(var entry in rootSorted){
+  for (var entry in rootSorted) {
     print("${entry.key} => ${entry.value.toStringAsFixed(2)}h");
   }
 }
- 
