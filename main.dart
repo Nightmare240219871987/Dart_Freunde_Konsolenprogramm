@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:core';
 import 'friend.dart';
 import 'vehicle.dart';
 
@@ -144,7 +145,8 @@ void printDetails() {
 }
 
 void printSortedDistanceMap(Map<String, double> map) {
-  //map.entries.toList()..sort((a, b) => a.value.compareTo(b.value));
+  //map.entries.toList().sort((a,b) => a.value.compareTo(b.value));
+  
   for(int i = 0; i < map.length; i++){
     print("${map.keys.elementAt(i)} => ${map.values.elementAt(i).toStringAsFixed(2)}h");
   }
